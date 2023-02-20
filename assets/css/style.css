@@ -1,0 +1,52 @@
+
+/******************/
+/* General Rules */
+/****************/
+
+
+/* Reset default properties*/
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
+
+/* --------- Global style */
+body{
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+.main{
+    background-color: rgb(255, 107, 181, 0.8);
+}
+
+
+
+.btn{
+    background-color: darkgoldenrod;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 2.1rem;
+    padding: 5px;
+    align-content: center;
+    
+}
+
+.game-display{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+.game-display p {
+    background-color: aliceblue;
+    border: 2px solid;
+    border-radius: 10px;
+    width: 150px;
+}
+
