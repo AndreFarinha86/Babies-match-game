@@ -29,17 +29,17 @@
         <div class="start-area">
             <div>Img</div>
             <div>
-                <button class="btn btn-play">Play</button>
-                <button class="btn btn-rules">Rules</button>
+                <button class="btn-style modal-open" data-modals="modal1">Play</button>
+                <button class="btn-style modal-open" data-modals="modal2">Rules</button>
             </div>
         </div>
 
         <!-- Game Area -->
         <div class="game-area">
             <div>
-                <button class="btn">Start</button>
-                <button class="btn">Reset</button>
-                <button class="btn">Quit</button>
+                <button class="btn-style">Start</button>
+                <button class="btn-style">Reset</button>
+                <button class="btn-style">Quit</button>
             </div>
             <div class="game-display">
                 <p>Time:00:00</p>
@@ -49,18 +49,38 @@
         </div>
 
         <!-- Modals-->
-
-        <div class="modal-play">
-            <div class="modal">
-                <button class="btn">Beginner</button>
-                <button class="btn">Intermediate</button>
-                <button class="btn">Advanced</button>
+        <div class="modals" id="modal1">
+            <div class="modals-style">
+                <button class="btn-style">Beginner</button>
+                <button class="btn-style">Intermediate</button>
+                <button class="btn-style">Advanced</button>
+                <button class="modal-close">X</button>
             </div>
         </div>
 
+        <div class="modals" id="modal2">
+            <div class="modals-style">
+                <p>Click "Play" to start the game.</p>
+                <p>Select the difficulty of the level you want to play</p>
+                <ul>
+                    <li>Easy - There are 16 cards on the board. Try to find the 8 different pairs as fast as possible.</li>
+                    <li>Intermediate - There are 24 cards on the board. Try to find the 12 different pairs as fast as possible.</li>
+                    <li>Hard - There are 32 cards on the board. Try to find the 16 different pairs as fast as possible.</li>
+                </ul>
+                <p>Once your game starts, you will then select two cards on the board.</p>
+                <p>If they match, they will stay face up on the board.</p>
+                <p>If they don't match, they will flip back over - try and remember where all the cards are if you don't get a matching pair.</p>
+                <p>If at any point you want to restart your game, you can click on the restart arrow in the top right corner of the game board.</p>
+                <p>Have fun and try to beat your previous time and flip count!</p>
+                <button class="modal-close">X</button>
+            </div>
+        </div>
+    
 
 
     </main>
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
