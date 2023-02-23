@@ -28,3 +28,37 @@ window.onclick = function(event) {
     event.target.style.display = "none";
    }
   };
+
+
+// -- CREATE CARD --
+
+let grid =document.querySelector(".grid");
+
+/**
+ * Function that creates each face of the card
+ * returns tag and className for each card face.
+ */
+function createElement(tag, className) {
+    let element = document.createElement(tag);
+    element.className = className;
+    return element;
+
+}
+
+/**
+ * Function that creates each card
+ * 
+ */
+function createCard() {
+    let card = createElement("div", "card");
+    let front = createElement("div", "face front");
+    let back = createElement("div", "face back");
+
+    card.appendChild(front);
+    card.appendChild(back);
+
+    grid.appendChild(card);
+
+}
+
+createCard();
