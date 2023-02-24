@@ -34,6 +34,17 @@ window.onclick = function(event) {
 
 let grid =document.querySelector(".grid");
 
+let cardElements = [
+    "card1",
+    "card2",
+    "card3",
+    "card4",
+    "card5",
+    "card6",
+    "card7",
+    "card8",
+];
+
 /**
  * Function that creates each face of the card
  * returns tag and className for each card face.
@@ -49,16 +60,31 @@ function createElement(tag, className) {
  * Function that creates each card
  * 
  */
-function createCard() {
+function createCard(cardElement) {
     let card = createElement("div", "card");
     let front = createElement("div", "face front");
     let back = createElement("div", "face back");
 
+    front.style.backgroundImage = `url(' ../assets/images/${cardElement}.jpg')`;
+
     card.appendChild(front);
     card.appendChild(back);
 
-    grid.appendChild(card);
+    return card;
 
 }
 
-createCard();
+function loadGame() {
+
+    let duplicatecardElements =[ ...cardElements, ...cardElements];
+
+    duplicatecardElements.forEach(function(cardElement) {
+
+        let card = createCard(cardElement);
+        grid.appendChild(card);
+
+    });
+
+}
+
+loadGame();

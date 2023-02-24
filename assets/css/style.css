@@ -82,7 +82,6 @@ body{
 }
 
 .front {
-    background-image: url("../images/card6.jpg");
     transform: rotateY(180deg);
 }
 
