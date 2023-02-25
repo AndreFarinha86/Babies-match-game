@@ -90,7 +90,7 @@ body{
     backface-visibility: hidden;
 }
 
-.card:hover {
+.card-reveal {
     transform: rotateY(180deg);
 
 }

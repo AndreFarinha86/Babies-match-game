@@ -45,6 +45,8 @@ let cardElements = [
     "card8",
 ];
 
+
+
 /**
  * Function that creates each face of the card
  * returns tag and className for each card face.
@@ -56,8 +58,13 @@ function createElement(tag, className) {
 
 }
 
+
+let cardReveal = function({target}){
+    target.parentNode.classList.add("card-reveal");
+}
+
 /**
- * Function that creates each card
+ * Function that creates each card and flip each card
  * 
  */
 function createCard(cardElement) {
@@ -69,6 +76,9 @@ function createCard(cardElement) {
 
     card.appendChild(front);
     card.appendChild(back);
+
+    card.addEventListener("click", cardReveal);
+
 
     return card;
 }
