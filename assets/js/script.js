@@ -46,7 +46,6 @@ let cardElements = [
 ];
 
 
-
 /**
  * Function that creates each face of the card
  * returns tag and className for each card face.
@@ -58,17 +57,28 @@ function createElement(tag, className) {
 
 }
 
+let firstCard = "";
+let secondCard = "";
+
 /**
- * Function that creates flip condition for each card
- * 
+ * Function that creates flip condition for each card,
+ * Allows only to flip 2 cards at a time
  */
 let cardReveal = function({target}){
-
     if (target.parentNode.className.includes("card-reveal")){
         return;
     }
 
-    target.parentNode.classList.add("card-reveal");
+    if (firstCard === ""){
+
+        target.parentNode.classList.add("card-reveal");
+        firstCard = target.parentNode;
+
+    } else if (secondCard === "") {
+        target.parentNode.classList.add("card-reveal");
+        secondCard = target.parentNode;
+    }
+
 }
 
 /**
