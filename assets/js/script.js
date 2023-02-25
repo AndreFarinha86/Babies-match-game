@@ -58,13 +58,21 @@ function createElement(tag, className) {
 
 }
 
-
+/**
+ * Function that creates flip condition for each card
+ * 
+ */
 let cardReveal = function({target}){
+
+    if (target.parentNode.className.includes("card-reveal")){
+        return;
+    }
+
     target.parentNode.classList.add("card-reveal");
 }
 
 /**
- * Function that creates each card and flip each card
+ * Function that creates each card and add click event to flip each card
  * 
  */
 function createCard(cardElement) {
