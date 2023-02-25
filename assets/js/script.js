@@ -60,11 +60,39 @@ function createElement(tag, className) {
 let firstCard = "";
 let secondCard = "";
 
+
+/**
+ * Function that will check both revealed cards
+ * Will keep revealed if cards macthing on click event
+ * Will hide if cards don't macthing on click event
+ */
+function checkCards(){
+    let firstCardElement = firstCard.getAttribute("data-element");
+    let secondCardElement = secondCard.getAttribute("data-element");
+
+    if ( firstCardElement === secondCardElement){
+
+        firstCard = "";
+        secondCard = "";
+
+    } else {
+        
+        setTimeout(function(){
+            firstCard.classList.remove("card-reveal");
+            secondCard.classList.remove("card-reveal");
+
+            firstCard = "";
+            secondCard = "";
+        },500);
+    }
+
+};
+
 /**
  * Function that creates flip condition for each card,
  * Allows only to flip 2 cards at a time
  */
-let cardReveal = function({target}){
+function cardReveal({target}){
     if (target.parentNode.className.includes("card-reveal")){
         return;
     }
@@ -79,11 +107,14 @@ let cardReveal = function({target}){
         secondCard = target.parentNode;
     }
 
+    checkCards();
+
 }
 
 /**
- * Function that creates each card and add click event to flip each card
- * 
+ * Function that creates each card
+ * add click event to flip each card
+ * set attribute data-element
  */
 function createCard(cardElement) {
     let card = createElement("div", "card");
@@ -96,6 +127,7 @@ function createCard(cardElement) {
     card.appendChild(back);
 
     card.addEventListener("click", cardReveal);
+    card.setAttribute("data-element", cardElement)
 
 
     return card;
