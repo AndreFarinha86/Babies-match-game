@@ -32,7 +32,7 @@ window.onclick = function(event) {
 
 // -- CREATE CARD --
 
-let grid =document.querySelector(".grid");
+let gameGrid =document.querySelector(".game-grid");
 
 let cardElements = [
     "card1",
@@ -71,20 +71,21 @@ function createCard(cardElement) {
     card.appendChild(back);
 
     return card;
-
 }
 
+/**
+ * Function that duplicate each card, shuffle entire cards array and load the final 
+ * array to the display game area
+ */
 function loadGame() {
-
     let duplicatecardElements =[ ...cardElements, ...cardElements];
 
-    duplicatecardElements.forEach(function(cardElement) {
+    let shuffledArray = duplicatecardElements.sort(function() {return Math.random()-0.5});
 
+    shuffledArray.forEach(function(cardElement) {
         let card = createCard(cardElement);
-        grid.appendChild(card);
-
+        gameGrid.appendChild(card);
     });
-
 }
 
 loadGame();
