@@ -18,7 +18,7 @@ let modalClose = document.querySelectorAll(".modal-close");
 // When the user clicks on Button (x), close the modal
 modalClose.forEach(function(btn){
     btn.onclick = function() {
-        let modal = (btn.closest(".modals").style.display="none");
+        (btn.closest(".modals").style.display="none");
     };
 });
 
@@ -28,6 +28,45 @@ window.onclick = function(event) {
     event.target.style.display = "none";
    }
   };
+
+
+
+// -- GAME AREA OPEN/QUIT RULES --
+
+// Get the button that opens the game area and close the initial Menu and Modal
+let playGame = document.querySelectorAll(".game-open");
+
+
+// When the user clicks the Beginner, Intermediate or Advanced buttons, open the game area and close the initial Menu and Modal
+playGame.forEach(function(btn){
+    btn.onclick = function() {
+ 
+        let openGame = document.getElementById("game-area");
+        openGame.classList.remove("hidden");
+
+        let closeMenu = document.getElementById("start-menu");
+        closeMenu.classList.add("hidden");
+        
+        (btn.closest(".modals").style.display="none");
+    };
+});
+
+// Get the button that close the game area and open the initial Menu
+let quitGame = document.querySelectorAll(".game-close");
+
+
+// When the user clicks the quit button, close the game area and open the initial Menu
+quitGame.forEach(function(btn){
+    btn.onclick = function() {
+ 
+        let closeGame = document.getElementById("game-area");
+        closeGame.classList.add("hidden");
+
+        let openMenu = document.getElementById("start-menu");
+        openMenu.classList.remove("hidden");
+    };
+});
+
 
 
 // -- CREATE CARD --

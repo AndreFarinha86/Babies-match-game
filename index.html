@@ -26,7 +26,7 @@
 
     <!-- Start Menu -->
     <main class="main">
-        <div class="start-area">
+        <div id="start-menu">
             <div>Img</div>
             <div>
                 <button class="btn-style modal-open" data-modals="modal1">Play</button>
@@ -35,11 +35,11 @@
         </div>
 
         <!-- Game Area -->
-        <div class="game-area">
+        <div class="hidden" id="game-area">
             <div>
                 <button class="btn-style">Start</button>
                 <button class="btn-style">Reset</button>
-                <button class="btn-style">Quit</button>
+                <button class="btn-style game-close">Quit</button>
             </div>
             <div class="game-display">
                 <p>Time:00:00</p>
@@ -52,9 +52,9 @@
         <!-- Modals-->
         <div class="modals" id="modal1">
             <div class="modals-style">
-                <button class="btn-style">Beginner</button>
-                <button class="btn-style">Intermediate</button>
-                <button class="btn-style">Advanced</button>
+                <button class="btn-style game-open">Beginner</button>
+                <button class="btn-style game-open">Intermediate</button>
+                <button class="btn-style game-open">Advanced</button>
                 <button class="modal-close">X</button>
             </div>
         </div>
