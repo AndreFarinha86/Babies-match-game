@@ -68,6 +68,29 @@ quitGame.forEach(function(btn){
 });
 
 
+// -- GAME AREA TIMER RULES --
+
+let startTime = 10;
+
+
+let time = startTime * 60;
+
+let timeDisplay = document.getElementById("timer");
+
+setInterval(timeCount, 1000);
+
+function timeCount() {
+    let minutes = Math.floor(time/60);
+    let secounds = time % 60;
+
+    secounds = secounds < 10 ? "0" + secounds : secounds;
+
+    timeDisplay.innerHTML = `Time:${minutes}:${secounds}`;
+    time--;
+
+}
+
+
 
 // -- CREATE CARD --
 
@@ -167,7 +190,6 @@ function createCard(cardElement) {
 
     card.addEventListener("click", cardReveal);
     card.setAttribute("data-element", cardElement)
-
 
     return card;
 }
