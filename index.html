@@ -40,6 +40,7 @@
                 <button type="button" class="btn-style" id="btn-start">Start</button>
                 <button type="button" class="btn-style" id="btn-reset">Reset</button>
                 <button type="button" class="btn-style game-close">Quit</button>
+                <button type="button" class="btn-style" onclick="checkAnswer()">Check</button>
             </div>
             <div class="game-display">
                 <p id="timer">00:00</p>
@@ -52,9 +53,9 @@
         <!-- Modals-->
         <div class="modals" id="modal1">
             <div class="modals-style">
-                <button type="button" class="btn-style btn-level game-open">Beginner</button>
-                <button type="button" class="btn-style btn-level game-open">Intermediate</button>
-                <button type="button" class="btn-style btn-level game-open">Advanced</button>
+                <button type="button" class="btn-style btn-level game-open" onclick="choiceDifficulty('beginner')">Beginner</button>
+                <button type="button" class="btn-style btn-level game-open" onclick="choiceDifficulty('intermediate')">Intermediate</button>
+                <button type="button" class="btn-style btn-level game-open" onclick="choiceDifficulty('advanced')">Advanced</button>
                 <button type="button" class="modal-close">X</button>
             </div>
         </div>

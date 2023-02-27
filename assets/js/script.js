@@ -68,9 +68,43 @@ quitGame.forEach(function(btn){
 });
 
 
-// -- GAME AREA TIMER RULES --
+// -- GAME LEVEL CHOICE RULES --
 
-let startTime = 10;
+// variables
+let gameLevel = "";
+let startTime = 0;
+
+// When the user click in the chosen game level button will return the game level
+function choiceDifficulty(difficulty) {
+    if(difficulty === "beginner"){
+        gameLevel = 'beginner';
+    } else if(difficulty === 'intermediate') {
+        gameLevel = "intermediate";
+    } else if(difficulty === "advanced") {
+        gameLevel = 'advanced';
+    } 
+    timeLevel(gameLevel);
+}
+
+// -- GAME AREA TIMER RULES --
+function timeLevel(gameLevel) {
+    if(gameLevel === "beginner"){
+        startTime = 20;
+    } else if(gameLevel === 'intermediate') {
+        startTime = 15;
+    } else if(gameLevel === "advanced") {
+        startTime = 10;
+    } 
+}
+
+
+function checkAnswer(){
+    //console.log(answer);
+    console.log(gameLevel);
+    console.log(startTime);
+    }
+
+
 
 
 let time = startTime * 60;
