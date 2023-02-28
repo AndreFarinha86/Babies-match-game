@@ -72,7 +72,7 @@ quitGame.forEach(function(btn){
 
 // variables
 let gameLevel = "";
-let startTime = 0;
+let time = 0;
 
 // When the user click in the chosen game level button will return the game level
 function choiceDifficulty(difficulty) {
@@ -89,40 +89,34 @@ function choiceDifficulty(difficulty) {
 // -- GAME AREA TIMER RULES --
 function timeLevel(gameLevel) {
     if(gameLevel === "beginner"){
-        startTime = 20;
+        time = 20 * 60;
     } else if(gameLevel === 'intermediate') {
-        startTime = 15;
+        time = 15 * 60;
     } else if(gameLevel === "advanced") {
-        startTime = 10;
+        time = 10 * 60;
     } 
+
+    let timeDisplay = document.getElementById("timer");
+
+    setInterval(timeCount, 1000);
+    
+    function timeCount() {
+        let minutes = Math.floor(time/60);
+        let secounds = time % 60;
+    
+        secounds = secounds < 10 ? "0" + secounds : secounds;
+    
+        timeDisplay.innerHTML = `Time:${minutes}:${secounds}`;
+        time--;
+    }
 }
 
 
 function checkAnswer(){
     //console.log(answer);
     console.log(gameLevel);
-    console.log(startTime);
+    console.log(time);
     }
-
-
-
-
-let time = startTime * 60;
-
-let timeDisplay = document.getElementById("timer");
-
-setInterval(timeCount, 1000);
-
-function timeCount() {
-    let minutes = Math.floor(time/60);
-    let secounds = time % 60;
-
-    secounds = secounds < 10 ? "0" + secounds : secounds;
-
-    timeDisplay.innerHTML = `Time:${minutes}:${secounds}`;
-    time--;
-
-}
 
 
 
