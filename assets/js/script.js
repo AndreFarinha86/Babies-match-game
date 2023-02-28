@@ -19,6 +19,7 @@ let modalClose = document.querySelectorAll(".modal-close");
 modalClose.forEach(function(btn){
     btn.onclick = function() {
         (btn.closest(".modals").style.display="none");
+        
     };
 });
 
@@ -30,7 +31,6 @@ window.onclick = function(event) {
   };
 
 
-
 // -- GAME AREA OPEN/QUIT RULES --
 
 // Get the button that opens the game area and close the initial Menu and Modal
@@ -38,18 +38,18 @@ let playGame = document.querySelectorAll(".game-open");
 
 
 // When the user clicks the Beginner, Intermediate or Advanced buttons, open the game area and close the initial Menu and Modal
-playGame.forEach(function(btn){
-    btn.onclick = function() {
- 
-        let openGame = document.getElementById("game-area");
-        openGame.classList.remove("hidden");
+function choiceGame () {
 
-        let closeMenu = document.getElementById("start-menu");
-        closeMenu.classList.add("hidden");
-        
-        (btn.closest(".modals").style.display="none");
-    };
-});
+let openGame = document.getElementById("game-area");
+openGame.classList.remove("hidden");
+
+let closeMenu = document.getElementById("start-menu");
+closeMenu.classList.add("hidden");
+
+let closeModal = document.getElementById("modal1");
+closeModal.style.display="none";
+
+}
 
 // Get the button that close the game area and open the initial Menu
 let quitGame = document.querySelectorAll(".game-close");
@@ -68,6 +68,7 @@ quitGame.forEach(function(btn){
 });
 
 
+
 // -- GAME LEVEL CHOICE RULES --
 
 // variables
@@ -84,6 +85,7 @@ function choiceDifficulty(difficulty) {
         gameLevel = 'advanced';
     } 
     timeLevel(gameLevel);
+    choiceGame ()
 }
 
 // -- GAME AREA TIMER RULES --
@@ -238,3 +240,6 @@ function loadGame() {
 }
 
 loadGame();
+
+
+
