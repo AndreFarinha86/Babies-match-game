@@ -114,28 +114,30 @@ function timeLevel(gameLevel) {
 }
 
 
-function checkAnswer(){
-    //console.log(answer);
-    console.log(gameLevel);
-    console.log(time);
-    }
+// -- START GAME RULES --
+
+document.getElementById("btn-start").addEventListener("click", startGame);
+document.getElementById("btn-reset").addEventListener("click", resetGame);
+
+// Funtion that will start or re-resart the game when click in start button
+function startGame() {
+    loadGame();
+    resetGame();
+}
+
+function resetGame() {
+    gameGrid.innerHTML = "";
+    loadGame();
+}
 
 
 
-// -- CREATE CARD --
+
+// -- MATCHING GAME RULES --
 
 let gameGrid =document.querySelector(".game-grid");
 
-let cardElements = [
-    "card1",
-    "card2",
-    "card3",
-    "card4",
-    "card5",
-    "card6",
-    "card7",
-    "card8",
-];
+let cardElements = [ "card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8" ];
 
 
 /**
@@ -239,7 +241,7 @@ function loadGame() {
     });
 }
 
-loadGame();
+
 
 
 
