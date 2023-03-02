@@ -71,47 +71,53 @@ quitGame.forEach(function(btn){
 
 // -- GAME LEVEL CHOICE RULES --
 
-// variables
-let gameLevel = "";
-let time = 0;
+// Game parameters for each level
+const gameLevelParameters = [
+    {gameLevel:1, cardsNumber: 10, timeLimit: 20},
+    {gameLevel:2, cardsNumber: 12, timeLimit: 15},
+    {gameLevel:2, cardsNumber: 14, timeLimit: 10},
+]
 
-// When the user click in the chosen game level button will return the game level
+// Function that will allocate the game level parameters to time and cards Number functions
 function choiceDifficulty(difficulty) {
-    if(difficulty === "beginner"){
-        gameLevel = 'beginner';
-    } else if(difficulty === 'intermediate') {
-        gameLevel = "intermediate";
-    } else if(difficulty === "advanced") {
-        gameLevel = 'advanced';
-    } 
-    timeLevel(gameLevel);
-    choiceGame ()
-}
+    let gameLevel;
+        if(difficulty === "beginner"){
+            gameLevel = 1;
+        } else if(difficulty === 'intermediate') {
+            gameLevel = 2;
+        } else if(difficulty === "advanced") {
+            gameLevel = 3;
+        } 
+        
+       let gameTime = gameLevelParameters[gameLevel - 1].timeLimit;
+       choiceGame ();
+       timeLevel(gameTime);
 
-// -- GAME AREA TIMER RULES --
-function timeLevel(gameLevel) {
-    if(gameLevel === "beginner"){
-        time = 20 * 60;
-    } else if(gameLevel === 'intermediate') {
-        time = 15 * 60;
-    } else if(gameLevel === "advanced") {
-        time = 10 * 60;
-    } 
+       console.log(gameLevel);
+    console.log(gameTime);
+    }
+    
 
+// Function that will run and dispaly the Game time
+function timeLevel(gameTime) {
+    let time = gameTime * 60; 
     let timeDisplay = document.getElementById("timer");
 
     setInterval(timeCount, 1000);
-    
+
     function timeCount() {
         let minutes = Math.floor(time/60);
         let secounds = time % 60;
-    
+
         secounds = secounds < 10 ? "0" + secounds : secounds;
-    
+
         timeDisplay.innerHTML = `Time:${minutes}:${secounds}`;
         time--;
     }
 }
+
+
+
 
 
 // -- START GAME RULES --
