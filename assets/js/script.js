@@ -65,15 +65,16 @@ quitGame.forEach(function(btn){
 });
 
 
-
 // -- GAME LEVEL CHOICE RULES --
 
 // GAME VARIABLES
-let gameGrid =document.querySelector(".game-grid");
-let cardElements =  [];
-let firstCard = "";
-let secondCard = "";
-let intervalId;
+let gameGrid =document.querySelector(".game-grid"); // Variable that assigns it the value of the DOM element
+let cardElements =  []; // Variable holds the cards front face array with correct length for the chosen game level
+let firstCard = ""; // Variable holds the frist revealed card of the pair
+let secondCard = ""; // Variable holds the second revealed card of the pair
+let intervalId; // Variable holds the game time for the chosen game level
+let moves = 0; // Variable holds each move on each flipped card
+let moveDisplay = document.getElementById("moves"); // Variable that assigns moves value to DOM element
 
 const cardsFrontFaceArray = [ 
     "card1", 
@@ -92,7 +93,7 @@ const cardsFrontFaceArray = [
     "card14",
     "card15",
     "card16",
-];
+]; // Assigns all available cards front faces.
 
 // Game parameters for each level
 const gameLevelParameters = [
@@ -139,10 +140,12 @@ function timeLevel(gameTime) {
 
         secounds = secounds < 10 ? "0" + secounds : secounds;
 
-        timeDisplay.innerHTML = `Time:${minutes}:${secounds}`;
+        timeDisplay.innerHTML = `Time: ${minutes}:${secounds}`;
         time--;
     }
 }
+
+
 
 // Function that will provide the correct array length for each game level
 function gameLevelCardsArray(gameCards) {
@@ -220,9 +223,15 @@ function cardReveal({target}){
     } else if (secondCard === "") {
         target.parentNode.classList.add("card-reveal");
         secondCard = target.parentNode;
+    
     }
+    
+    moves++; // Increment moves
+    moveDisplay.innerText = `Moves: ${moves}`; // Update display with moves increments
 
     checkCards();
+    console.log(firstCard);
+    console.log(secondCard);
 }
 
 
