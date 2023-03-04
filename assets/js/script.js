@@ -61,6 +61,8 @@ quitGame.forEach(function(btn){
 
         let openMenu = document.getElementById("start-menu");
         openMenu.classList.remove("hidden");
+
+        gameGrid.innerHTML = "";
     };
 });
 
@@ -97,9 +99,9 @@ const cardsFrontFaceArray = [
 
 // Game parameters for each level
 const gameLevelParameters = [
-    {gameLevel:1, cardsNumber: 10, timeLimit: 20},
-    {gameLevel:2, cardsNumber: 12, timeLimit: 15},
-    {gameLevel:2, cardsNumber: 14, timeLimit: 10},
+    {gameLevel:1, cardsNumber: 2, timeLimit: 20},
+    {gameLevel:2, cardsNumber: 4, timeLimit: 15},
+    {gameLevel:2, cardsNumber: 6, timeLimit: 10},
 ]
 
 // Function that will allocate the game level parameters to time and cards Number functions
@@ -164,12 +166,15 @@ function gameLevelCardsArray(gameCards) {
 
 
 
-// -- REST GAME RULES --
+// -- RESET GAME RULES --
 document.getElementById("btn-reset").addEventListener("click", resetGame);
 
-// Funtion that will reset the game when click in reset button
+// Function that will reset the game when click in reset button
 function resetGame() {
     gameGrid.innerHTML = "";
+    moves = 0;
+    moveDisplay.innerText = `Moves: ${moves}`;
+    loadGame();
 }
 
 
