@@ -1,7 +1,9 @@
 // -- MODALS RULES --
 
-// Get the button that opens the modal
-let modalOpen = document.querySelectorAll(".modal-open");
+// MODALS -- VARIABLES --
+let modalOpen = document.querySelectorAll(".modal-open"); // Get the button that opens the modal
+let modalClose = document.querySelectorAll(".modal-close"); // Get the button that closes the modal
+
 
 // When the user clicks the button, open the modal 
 modalOpen.forEach(function(btn){
@@ -12,16 +14,14 @@ modalOpen.forEach(function(btn){
     };
 });
 
-// Get the button  that closes the modal
-let modalClose = document.querySelectorAll(".modal-close");
 
 // When the user clicks on Button (x), close the modal
 modalClose.forEach(function(btn){
     btn.onclick = function() {
         (btn.closest(".modals").style.display="none");
-        
     };
 });
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -31,28 +31,25 @@ window.onclick = function(event) {
   };
 
 
+
 // -- GAME AREA OPEN/QUIT RULES --
 
-// Get the button that opens the game area and close the initial Menu and Modal
-let playGame = document.querySelectorAll(".game-open");
-
+// OPEN/QUIT -- VARIABLES --
+let playGame = document.querySelectorAll(".game-open"); // Get the button that opens the game area and close the initial Menu and Modal
+let quitGame = document.querySelectorAll(".game-close"); // Get the button that close the game area and open the initial Menu
 
 // When the user clicks the Beginner, Intermediate or Advanced buttons, open the game area and close the initial Menu and Modal
 function choiceGame () {
 
-let openGame = document.getElementById("game-area");
-openGame.classList.remove("hidden");
+    let openGame = document.getElementById("game-area");
+    openGame.classList.remove("hidden");
 
-let closeMenu = document.getElementById("start-menu");
-closeMenu.classList.add("hidden");
+    let closeMenu = document.getElementById("start-menu");
+    closeMenu.classList.add("hidden");
 
-let closeModal = document.getElementById("modal1");
-closeModal.style.display="none";
-
+    let closeModal = document.getElementById("modal1");
+    closeModal.style.display="none";
 }
-
-// Get the button that close the game area and open the initial Menu
-let quitGame = document.querySelectorAll(".game-close");
 
 
 // When the user clicks the quit button, close the game area and open the initial Menu
@@ -118,8 +115,6 @@ function timeLevel(gameTime) {
 
 
 
-
-
 // -- REST GAME RULES --
 document.getElementById("btn-reset").addEventListener("click", resetGame);
 
@@ -134,15 +129,14 @@ function resetGame() {
 
 // -- MATCHING GAME RULES --
 
+//MATCHING GAME -- VARIABLES --
 let gameGrid =document.querySelector(".game-grid");
-
 let cardElements = [ "card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8" ];
+let firstCard = "";
+let secondCard = "";
 
 
-/**
- * Function that creates each face of the card
- * returns tag and className for each card face.
- */
+//Function that creates each face of the card and returns tag and className for each card face.
 function createElement(tag, className) {
     let element = document.createElement(tag);
     element.className = className;
@@ -150,15 +144,8 @@ function createElement(tag, className) {
 
 }
 
-let firstCard = "";
-let secondCard = "";
 
-
-/**
- * Function that will check both revealed cards
- * Will keep revealed if cards macthing on click event
- * Will hide if cards don't macthing on click event
- */
+//Function that will check both revealed cards, Will keep revealed if cards macthing on click event, Will hide if cards don't macthing on click event
 function checkCards(){
     let firstCardElement = firstCard.getAttribute("data-element");
     let secondCardElement = secondCard.getAttribute("data-element");
@@ -181,10 +168,8 @@ function checkCards(){
 
 };
 
-/**
- * Function that creates flip condition for each card,
- * Allows only to flip 2 cards at a time
- */
+
+//Function that creates flip condition for each card, Allows only to flip 2 cards at a time
 function cardReveal({target}){
     if (target.parentNode.className.includes("card-reveal")){
         return;
@@ -201,14 +186,10 @@ function cardReveal({target}){
     }
 
     checkCards();
-
 }
 
-/**
- * Function that creates each card
- * add click event to flip each card
- * set attribute data-element
- */
+
+//Function that creates each card, add click event to flip each card and set attribute data-element
 function createCard(cardElement) {
     let card = createElement("div", "card");
     let front = createElement("div", "face front");
@@ -225,10 +206,8 @@ function createCard(cardElement) {
     return card;
 }
 
-/**
- * Function that duplicate each card, shuffle entire cards array and load the final 
- * array to the display game area
- */
+
+//Function that duplicate each card, shuffle entire cards array and load the final array to the display game area
 function loadGame() {
     let duplicatecardElements =[ ...cardElements, ...cardElements];
 
