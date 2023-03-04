@@ -31,11 +31,9 @@ window.onclick = function(event) {
   };
 
 
-
 // -- GAME AREA OPEN/QUIT RULES --
 
 // OPEN/QUIT -- VARIABLES --
-let playGame = document.querySelectorAll(".game-open"); // Get the button that opens the game area and close the initial Menu and Modal
 let quitGame = document.querySelectorAll(".game-close"); // Get the button that close the game area and open the initial Menu
 
 // When the user clicks the Beginner, Intermediate or Advanced buttons, open the game area and close the initial Menu and Modal
@@ -62,7 +60,11 @@ quitGame.forEach(function(btn){
         let openMenu = document.getElementById("start-menu");
         openMenu.classList.remove("hidden");
 
+        let gameOver = document.getElementById("modal3");
+        gameOver.style.display="none";
+        
         gameGrid.innerHTML = "";
+
     };
 });
 
@@ -122,6 +124,7 @@ function choiceDifficulty(difficulty) {
         timeLevel(gameTime);
         cardElements = gameLevelCardsArray(gameCards);
         loadGame();
+        
  
         console.log(gameLevel);
         console.log(gameTime);
@@ -144,9 +147,12 @@ function timeLevel(gameTime) {
 
         timeDisplay.innerHTML = `Time: ${minutes}:${secounds}`;
         time--;
+        if (time === 0) {
+            time = 0
+            document.getElementById("modal3").style.display="block";
+        }
     }
 }
-
 
 
 // Function that will provide the correct array length for each game level
@@ -165,6 +171,12 @@ function gameLevelCardsArray(gameCards) {
 }
 
 
+function endGame() {
+   
+   
+
+  }
+
 
 // -- RESET GAME RULES --
 document.getElementById("btn-reset").addEventListener("click", resetGame);
@@ -176,6 +188,7 @@ function resetGame() {
     moveDisplay.innerText = `Moves: ${moves}`;
     loadGame();
 }
+
 
 
 // -- MATCHING GAME RULES --
