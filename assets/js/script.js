@@ -120,17 +120,10 @@ function timeLevel(gameTime) {
 
 
 
-// -- START GAME RULES --
-
-document.getElementById("btn-start").addEventListener("click", startGame);
+// -- REST GAME RULES --
 document.getElementById("btn-reset").addEventListener("click", resetGame);
 
-// Funtion that will start or re-resart the game when click in start button
-function startGame() {
-    loadGame();
-    resetGame();
-}
-
+// Funtion that will reset the game when click in reset button
 function resetGame() {
     gameGrid.innerHTML = "";
     loadGame();
