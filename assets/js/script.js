@@ -68,6 +68,32 @@ quitGame.forEach(function(btn){
 
 // -- GAME LEVEL CHOICE RULES --
 
+// GAME VARIABLES
+let gameGrid =document.querySelector(".game-grid");
+let cardElements =  [];
+let firstCard = "";
+let secondCard = "";
+let intervalId;
+
+const cardsFrontFaceArray = [ 
+    "card1", 
+    "card2", 
+    "card3", 
+    "card4", 
+    "card5", 
+    "card6", 
+    "card7", 
+    "card8", 
+    "card9", 
+    "card10", 
+    "card11", 
+    "card12", 
+    "card13", 
+    "card14",
+    "card15",
+    "card16",
+];
+
 // Game parameters for each level
 const gameLevelParameters = [
     {gameLevel:1, cardsNumber: 10, timeLimit: 20},
@@ -86,21 +112,26 @@ function choiceDifficulty(difficulty) {
             gameLevel = 3;
         } 
         
-       let gameTime = gameLevelParameters[gameLevel - 1].timeLimit;
-       choiceGame ();
-       timeLevel(gameTime);
-
-       console.log(gameLevel);
-    console.log(gameTime);
-    }
-    
+        let gameTime = gameLevelParameters[gameLevel - 1].timeLimit;
+        let gameCards = gameLevelParameters[gameLevel - 1].cardsNumber;
+ 
+        choiceGame ();
+        timeLevel(gameTime);
+        cardElements = gameLevelCardsArray(gameCards);
+        loadGame();
+ 
+        console.log(gameLevel);
+        console.log(gameTime);
+        console.log(gameCards);
+    }         
 
 // Function that will run and dispaly the Game time
 function timeLevel(gameTime) {
     let time = gameTime * 60; 
     let timeDisplay = document.getElementById("timer");
 
-    setInterval(timeCount, 1000);
+    clearInterval(intervalId);
+    intervalId = setInterval(timeCount, 1000);
 
     function timeCount() {
         let minutes = Math.floor(time/60);
@@ -113,6 +144,21 @@ function timeLevel(gameTime) {
     }
 }
 
+// Function that will provide the correct array length for each game level
+function gameLevelCardsArray(gameCards) {
+    const copyArray = [...cardsFrontFaceArray];
+    const newArray = [];
+  while (newArray.length < gameCards && copyArray.length) {
+    const randomIndex = Math.floor(Math.random() * copyArray.length);
+    const randomObj = copyArray[randomIndex];
+    if (!newArray.includes(randomObj)) {
+        newArray.push(randomObj);
+    }
+    copyArray.splice(randomIndex, 1);
+  }
+  return newArray;
+}
+
 
 
 // -- REST GAME RULES --
@@ -121,20 +167,10 @@ document.getElementById("btn-reset").addEventListener("click", resetGame);
 // Funtion that will reset the game when click in reset button
 function resetGame() {
     gameGrid.innerHTML = "";
-    loadGame();
 }
 
 
-
-
 // -- MATCHING GAME RULES --
-
-//MATCHING GAME -- VARIABLES --
-let gameGrid =document.querySelector(".game-grid");
-let cardElements = [ "card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8" ];
-let firstCard = "";
-let secondCard = "";
-
 
 //Function that creates each face of the card and returns tag and className for each card face.
 function createElement(tag, className) {
@@ -147,9 +183,6 @@ function createElement(tag, className) {
 
 //Function that will check both revealed cards, Will keep revealed if cards macthing on click event, Will hide if cards don't macthing on click event
 function checkCards(){
-    console.log(firstCard);
-    console.log(secondCard);
-
     if(firstCard != "" &&  secondCard != ""){
         let firstCardElement = firstCard.getAttribute("data-element");
         let secondCardElement = secondCard.getAttribute("data-element");
@@ -221,6 +254,8 @@ function loadGame() {
         let card = createCard(cardElement);
         gameGrid.appendChild(card);
     });
+    console.log(cardElements);
+    console.log(duplicatecardElements);
 }
 
 
