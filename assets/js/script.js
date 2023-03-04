@@ -147,27 +147,31 @@ function createElement(tag, className) {
 
 //Function that will check both revealed cards, Will keep revealed if cards macthing on click event, Will hide if cards don't macthing on click event
 function checkCards(){
-    let firstCardElement = firstCard.getAttribute("data-element");
-    let secondCardElement = secondCard.getAttribute("data-element");
+    console.log(firstCard);
+    console.log(secondCard);
 
-    if ( firstCardElement === secondCardElement){
-
-        firstCard = "";
-        secondCard = "";
-
-    } else {
-        
-        setTimeout(function(){
-            firstCard.classList.remove("card-reveal");
-            secondCard.classList.remove("card-reveal");
-
+    if(firstCard != "" &&  secondCard != ""){
+        let firstCardElement = firstCard.getAttribute("data-element");
+        let secondCardElement = secondCard.getAttribute("data-element");
+    
+        if ( firstCardElement === secondCardElement){
+    
             firstCard = "";
             secondCard = "";
-        },500);
+    
+        } else {
+            
+            setTimeout(function(){
+                firstCard.classList.remove("card-reveal");
+                secondCard.classList.remove("card-reveal");
+    
+                firstCard = "";
+                secondCard = "";
+            },500);
+        }
     }
 
 };
-
 
 //Function that creates flip condition for each card, Allows only to flip 2 cards at a time
 function cardReveal({target}){
