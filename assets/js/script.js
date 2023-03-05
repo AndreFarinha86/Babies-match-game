@@ -161,8 +161,8 @@ function timeLevel() {
 
         timeDisplay.innerHTML = `Time: ${minutes}:${secounds}`;
         time--;
-        if (time === 0) {
-            time = 0
+        if (time < 0) {
+            clearInterval(intervalId);
             document.getElementById("modal3").style.display = "block";
         }
     }
