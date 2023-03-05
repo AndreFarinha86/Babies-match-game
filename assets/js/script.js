@@ -63,6 +63,8 @@ quitGame.forEach(function(btn){
         let gameOver = document.getElementById("modal3");
         gameOver.style.display="none";
         
+        resetGame();
+
         gameGrid.innerHTML = "";
 
     };
@@ -73,12 +75,14 @@ quitGame.forEach(function(btn){
 
 // GAME VARIABLES
 let gameGrid =document.querySelector(".game-grid"); // Variable that assigns it the value of the DOM element
-let cardElements =  []; // Variable holds the cards front face array with correct length for the chosen game level
-let firstCard = ""; // Variable holds the frist revealed card of the pair
-let secondCard = ""; // Variable holds the second revealed card of the pair
-let intervalId; // Variable holds the game time for the chosen game level
-let moves = 0; // Variable holds each move on each flipped card
+let cardElements =  []; // Variable that holds the cards front face array with correct length for the chosen game level
+let firstCard = ""; // Variable that holds the frist revealed card of the pair
+let secondCard = ""; // Variable that holds the second revealed card of the pair
+let intervalId; // Variable that holds the game time for the chosen game level
+let moves = 0; // Variable that holds each move on each flipped card
 let moveDisplay = document.getElementById("moves"); // Variable that assigns moves value to DOM element
+
+
 
 const cardsFrontFaceArray = [ 
     "card1", 
@@ -125,10 +129,6 @@ function choiceDifficulty(difficulty) {
         cardElements = gameLevelCardsArray(gameCards);
         loadGame();
         
- 
-        console.log(gameLevel);
-        console.log(gameTime);
-        console.log(gameCards);
     }         
 
 // Function that will run and dispaly the Game time
@@ -170,12 +170,6 @@ function gameLevelCardsArray(gameCards) {
   return newArray;
 }
 
-
-function endGame() {
-   
-   
-
-  }
 
 
 // -- RESET GAME RULES --
@@ -223,6 +217,7 @@ function checkCards(){
                 secondCard = "";
             },500);
         }
+
     }
 
 };
@@ -248,8 +243,6 @@ function cardReveal({target}){
     moveDisplay.innerText = `Moves: ${moves}`; // Update display with moves increments
 
     checkCards();
-    console.log(firstCard);
-    console.log(secondCard);
 }
 
 
@@ -281,8 +274,6 @@ function loadGame() {
         let card = createCard(cardElement);
         gameGrid.appendChild(card);
     });
-    console.log(cardElements);
-    console.log(duplicatecardElements);
 }
 
 
