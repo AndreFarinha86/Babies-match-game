@@ -48,10 +48,12 @@ header h1{
     color: rgb(239, 161, 174);
 }
 
+
 .game-display{
     display: flex;
     gap: 10px;
     justify-content: center;
+    padding-top: 10px;
 }
 
 .game-display p {
@@ -59,6 +61,10 @@ header h1{
     border: 2px solid;
     border-radius: 10px;
     width: 150px;
+    padding: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bolder;
 }
 
 .hidden{
@@ -67,19 +73,22 @@ header h1{
 
 /* --------- Cards style */
 .game-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 80vw;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .card {
     aspect-ratio: 3/4;
-    width: 100%;
-    background-color: #333;
-    border-radius: 5px;
+    width: 8vw;
+    border: solid 2px palevioletred;
+    border-radius: 10px;
     position: relative;
     transition: all 400ms ease;
     transform-style: preserve-3d;
