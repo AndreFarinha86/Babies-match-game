@@ -12,35 +12,35 @@
 
 
 /* --------- Global style */
-body{
+body {
     align-items: center;
     text-align: center;
     align-content: center;
-    background: url(../images/game-background.jpg) ;
+    background: url(../images/game-background.jpg);
     background-size: cover;
 }
 
-header h1{
+header h1 {
     font-family: "Yellowtail", sans-serif;
     font-size: 3rem;
     padding: 10px 0;
     background-color: white;
 }
 
-.front-img img{
+.front-img img {
     width: 20%;
 }
 
-.btn-style{
+.btn-style {
     font-family: "Heebo", sans-serif;
     font-size: 2.1rem;
-    color:whitesmoke;
+    color: whitesmoke;
     background-color: rgb(239, 161, 174);
     border: 3px solid;
     border-radius: 20px;
     padding: 10px 25px;
     align-content: center;
-    cursor: pointer;  
+    cursor: pointer;
 }
 
 .btn-style:hover {
@@ -49,7 +49,7 @@ header h1{
 }
 
 
-.game-display{
+.game-display {
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -67,17 +67,18 @@ header h1{
     font-weight: bolder;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
 /* --------- Cards style */
 .game-grid {
     background-color: whitesmoke;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
     justify-content: center;
     gap: 15px;
+    width: 100%;
     max-width: 80vw;
     margin: 10px auto;
     padding: 15px;
@@ -86,7 +87,7 @@ header h1{
 
 .card {
     aspect-ratio: 3/4;
-    width: 8vw;
+    width: 100%;
     border: solid 2px palevioletred;
     border-radius: 10px;
     position: relative;
@@ -121,7 +122,7 @@ header h1{
 /* --------- Modal proprieties and style */
 
 /* Modal (background) */
-.modals{
+.modals {
     position: fixed;
     top: 0;
     left: 0;
@@ -133,7 +134,7 @@ header h1{
 }
 
 /* Modal Content */
-.modals-style{
+.modals-style {
     background-color: rgb(224, 250, 250);
     border: solid 2px #333;
     font-family: "Montserrat", sans-serif;
@@ -157,14 +158,14 @@ header h1{
     line-height: 1.5;
 }
 
-.modals-style h2, h3{
+.modals-style h2,
+h3 {
     text-align: center;
     font-weight: bolder;
 }
 
 
 /* Modal Close Cross */
-
 .modal-close {
     position: relative;
     left: 90%;
@@ -174,11 +175,66 @@ header h1{
     width: 40px;
     border: solid 3px;
     border-radius: 40px;
-  }
-  
-  .modal-close:hover,
-  .modal-close:focus {
+}
+
+.modal-close:hover,
+.modal-close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+
+/******************/
+/* Media Queries */
+/****************/
+
+/* Responsive rules for screens smaller than 950px */
+@media screen and (max-width: 950px) {}
+
+/* Responsive rules for screens smaller than 650px */
+@media screen and (max-width: 650px) {}
+
+/* Responsive rules for screens smaller than 350px */
+@media screen and (max-width: 350px) {
+
+    /* --------- Global style */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .front-img img {
+        width: 40%;
+    }
+
+    .btn-style {
+        font-size: 2rem;
+        padding: 10px 15px;
+    }
+
+    .game-display p {
+        padding: 2px;
+        font-size: 1rem;
+    }
+
+    /* --------- Cards style */
+    .game-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* --------- Modal proprieties and style */
+    .modals-style {
+        width: 80%;
+        padding: 25px 15px;
+        font-size: 0.7rem;
+        margin: 80px auto;
+        text-indent: 0;
+        gap: 10px;
+    }
+
+    .modal-close {
+        left: 80%;
+    }
+}
