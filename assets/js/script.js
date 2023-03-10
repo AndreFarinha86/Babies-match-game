@@ -284,7 +284,7 @@ function createCard(cardElement) {
     let front = createElement("div", "face front");
     let back = createElement("div", "face back");
 
-    front.style.backgroundImage = `url('../assets/images/${cardElement}.jpg')`;
+    front.style.backgroundImage = `url('./assets/images/${cardElement}.jpg')`;
 
     card.appendChild(front);
     card.appendChild(back);
