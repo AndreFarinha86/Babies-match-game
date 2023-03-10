@@ -25,6 +25,7 @@ window.onclick = function (event) {
     if (event.target.className === "modals") {
         event.target.style.display = "none";
     }
+
 };
 
 
