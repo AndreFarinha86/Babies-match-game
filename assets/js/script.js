@@ -4,7 +4,6 @@
 let modalOpen = document.querySelectorAll(".modal-open"); // Get the button that opens the modal
 let modalClose = document.querySelectorAll(".modal-close"); // Get the button that closes the modal
 
-
 // When the user clicks the button, open the modal 
 modalOpen.forEach(function (btn) {
     btn.onclick = function () {
@@ -14,14 +13,12 @@ modalOpen.forEach(function (btn) {
     };
 });
 
-
 // When the user clicks on Button (x), close the modal
 modalClose.forEach(function (btn) {
     btn.onclick = function () {
         (btn.closest(".modals").style.display = "none");
     };
 });
-
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
@@ -36,7 +33,9 @@ window.onclick = function (event) {
 // OPEN/QUIT -- VARIABLES --
 let quitGame = document.querySelectorAll(".game-close"); // Get the button that close the game area and open the initial Menu
 
-// When the user clicks the Beginner, Intermediate or Advanced buttons, open the game area and close the initial Menu and Modal
+/**
+ * When the user clicks the Beginner, Intermediate or Advanced buttons, open the game area and close the initial Menu and Modal
+ */
 function choiceGame() {
 
     let openGame = document.getElementById("game-area");
@@ -48,7 +47,6 @@ function choiceGame() {
     let closeModal = document.getElementById("modal1");
     closeModal.style.display = "none";
 }
-
 
 // When the user clicks the quit button, close the game area and open the initial Menu
 quitGame.forEach(function (btn) {
@@ -126,7 +124,9 @@ const gameLevelParameters = [{
     },
 ]
 
-// Function that will allocate the game level parameters to time and cards Number functions
+/**
+ * Allocate the game level parameters to time and cards Number functions
+ */
 function choiceDifficulty(difficulty) {
     if (difficulty === "beginner") {
         gameLevel = 1;
@@ -145,7 +145,9 @@ function choiceDifficulty(difficulty) {
     loadGame();
 }
 
-// Function that will run and dispaly the Game time
+/**
+ * Run and dispaly the Game time
+ */
 function timeLevel() {
     let time = gameTime * 60;
     let timeDisplay = document.getElementById("timer");
@@ -168,8 +170,9 @@ function timeLevel() {
     }
 }
 
-
-// Function that will provide the correct array length for each game level
+/**
+ * Provide the correct array length for each game level
+ */
 function gameLevelCardsArray() {
     const copyArray = [...cardsFrontFaceArray];
     const newArray = [];
@@ -188,7 +191,9 @@ function gameLevelCardsArray() {
 // -- RESET GAME RULES --
 document.getElementById("btn-reset").addEventListener("click", resetGame);
 
-// Function that will reset the game when click in reset button
+/**
+ * Reset the game when click in reset button
+ */
 function resetGame() {
     gameGrid.innerHTML = "";
     moves = 0;
@@ -200,15 +205,18 @@ function resetGame() {
 
 // -- MATCHING GAME RULES --
 
-//Function that creates each face of the card and returns tag and className for each card face.
+/**
+ * Creates each face of the card and returns tag and className for each card face.
+ */
 function createElement(tag, className) {
     let element = document.createElement(tag);
     element.className = className;
     return element;
 }
 
-
-//Function that will check both revealed cards, Will keep revealed if cards macthing on click event, Will hide if cards don't macthing on click event
+/**
+ * Check both revealed cards, Will keep revealed if cards macthing on click event, Will hide if cards don't macthing on click event
+ */
 function checkCards() {
     if (firstCard != "" && secondCard != "") {
         let firstCardElement = firstCard.getAttribute("data-element");
@@ -240,7 +248,9 @@ function checkCards() {
     }
 };
 
-//Function that creates flip condition for each card, Allows only to flip 2 cards at a time
+/**
+ * Creates flip condition for each card, Allows only to flip 2 cards at a time
+ */
 function cardReveal({
     target
 }) {
@@ -265,14 +275,15 @@ function cardReveal({
     checkCards();
 }
 
-
-//Function that creates each card, add click event to flip each card and set attribute data-element
+/**
+ * Creates each card, add click event to flip each card and set attribute data-element
+ */
 function createCard(cardElement) {
     let card = createElement("div", "card");
     let front = createElement("div", "face front");
     let back = createElement("div", "face back");
 
-    front.style.backgroundImage = `url('./assets/images/${cardElement}.jpg')`;
+    front.style.backgroundImage = `url('../assets/images/${cardElement}.jpg')`;
 
     card.appendChild(front);
     card.appendChild(back);
@@ -283,8 +294,9 @@ function createCard(cardElement) {
     return card;
 }
 
-
-//Function that duplicate each card, shuffle entire cards array and load the final array to the display game area
+/**
+ * Duplicate each card, shuffle entire cards array and load the final array to the display game area
+ */
 function loadGame() {
     let duplicatecardElements = [...cardElements, ...cardElements];
 
