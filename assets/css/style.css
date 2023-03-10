@@ -190,10 +190,40 @@ h3 {
 /****************/
 
 /* Responsive rules for screens smaller than 950px */
-@media screen and (max-width: 950px) {}
+@media screen and (max-width: 950px) {
+        /* --------- Cards style */
+        .game-grid {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+    
+}
 
 /* Responsive rules for screens smaller than 650px */
-@media screen and (max-width: 650px) {}
+@media screen and (max-width: 700px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .front-img img {
+        width: 50%;
+    }
+
+    /* --------- Modal proprieties and style */
+    .modals-style {
+        width: 80%;
+        padding: 25px 15px;
+        font-size: 0.7rem;
+        margin: 80px auto;
+        text-indent: 0;
+        gap: 10px;
+    }
+
+    .modal-close {
+        left: 80%;
+    }
+}
 
 /* Responsive rules for screens smaller than 350px */
 @media screen and (max-width: 350px) {
@@ -224,17 +254,5 @@ h3 {
         padding: 10px;
     }
 
-    /* --------- Modal proprieties and style */
-    .modals-style {
-        width: 80%;
-        padding: 25px 15px;
-        font-size: 0.7rem;
-        margin: 80px auto;
-        text-indent: 0;
-        gap: 10px;
-    }
 
-    .modal-close {
-        left: 80%;
-    }
 }
