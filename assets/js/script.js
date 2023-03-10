@@ -90,7 +90,7 @@ let moveDisplay = document.getElementById("moves"); // Variable that assigns mov
 let revealedCards; // Variable that holds the number of cards that have been revealed
 
 const cardsFrontFaceArray = [
-    "card1",
+    "card1", 
     "card2",
     "card3",
     "card4",
@@ -272,7 +272,7 @@ function createCard(cardElement) {
     let front = createElement("div", "face front");
     let back = createElement("div", "face back");
 
-    front.style.backgroundImage = `url(' ../assets/images/${cardElement}.jpg')`;
+    front.style.backgroundImage = `url('assets/images/${cardElement}.jpg')`;
 
     card.appendChild(front);
     card.appendChild(back);
