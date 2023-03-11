@@ -52,13 +52,13 @@ In this project the following technologies have been used.
 ### Frameworks, Libraries & Programs Used
 
 - [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Patua+One' font for page titles, 'Hebbo' font for sections titles and 'montserrat' font  for text in general into the style.css file which is used on all pages throughout the project.
+    - Google fonts were used to import the 'Yellowtail' font for Game title, 'Heebo' font for buttons and 'montserrat' font  for text in general into the style.css file which is used on all pages throughout the project.
 
 - [Font Awesome:](https://fontawesome.com/)
-    - Font Awesome was used on all pages throughout the website to add icons for aesthetic, social links and burger button.
+    - Font Awesome was used on website title to add icons for aesthetic.
 
 - [Hover.css:](https://ianlunn.github.io/Hover/)
-    - Hover.css was used on the navigation links and forms buttons to add the float transition while being hovered over.
+    - Hover.css was used on the buttons to add the float transition while being hovered over.
 
 - [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
