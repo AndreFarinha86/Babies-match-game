@@ -123,7 +123,7 @@ const gameLevelParameters = [{
         cardsNumber: 12,
         timeLimit: 1
     },
-]
+];
 
 /**
  * Allocate the game level parameters to time and cards Number functions
@@ -199,7 +199,7 @@ function resetGame() {
     gameGrid.innerHTML = "";
     moves = 0;
     moveDisplay.innerText = `Moves: ${moves}`;
-    timeLevel()
+    timeLevel();
     loadGame();
 }
 
@@ -239,7 +239,7 @@ function checkCards() {
             }, 500);
         }
 
-        revealedCards = document.querySelectorAll(".card-reveal").length
+        revealedCards = document.querySelectorAll(".card-reveal").length;
 
         if (revealedCards === cardElements.length * 2) {
 
@@ -247,7 +247,7 @@ function checkCards() {
             document.getElementById("modal4").style.display = "block";
         }
     }
-};
+}
 
 /**
  * Creates flip condition for each card, Allows only to flip 2 cards at a time
@@ -290,7 +290,7 @@ function createCard(cardElement) {
     card.appendChild(back);
 
     card.addEventListener("click", cardReveal);
-    card.setAttribute("data-element", cardElement)
+    card.setAttribute("data-element", cardElement);
 
     return card;
 }
@@ -302,7 +302,7 @@ function loadGame() {
     let duplicatecardElements = [...cardElements, ...cardElements];
 
     let shuffledArray = duplicatecardElements.sort(function () {
-        return Math.random() - 0.5
+        return Math.random() - 0.5;
     });
 
     shuffledArray.forEach(function (cardElement) {
