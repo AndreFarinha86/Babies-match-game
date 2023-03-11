@@ -89,7 +89,7 @@ let moveDisplay = document.getElementById("moves"); // Variable that assigns mov
 let revealedCards; // Variable that holds the number of cards that have been revealed
 
 const cardsFrontFaceArray = [
-    "card1", 
+    "card1",
     "card2",
     "card3",
     "card4",
@@ -111,12 +111,12 @@ const cardsFrontFaceArray = [
 const gameLevelParameters = [{
         gameLevel: 1,
         cardsNumber: 8,
-        timeLimit: 5
+        timeLimit: 3
     },
     {
         gameLevel: 2,
         cardsNumber: 10,
-        timeLimit: 3
+        timeLimit: 2
     },
     {
         gameLevel: 2,
@@ -222,7 +222,8 @@ function checkCards() {
     if (firstCard != "" && secondCard != "") {
         let firstCardElement = firstCard.getAttribute("data-element");
         let secondCardElement = secondCard.getAttribute("data-element");
-
+        console.log(firstCard);
+        console.log(secondCard);
         if (firstCardElement === secondCardElement) {
 
             firstCard = "";
