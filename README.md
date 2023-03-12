@@ -178,7 +178,7 @@ The Wireframe [balsamiq](https://balsamiq.com/) was used initially to draft and 
 
 - The Win Modal has Quit button that allows user to return to home page.
 
-![Win Modal](assets/images/card11.jpg)
+![Win Modal](assets/images/read-me-features11.png)
 
 ---
 
