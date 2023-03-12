@@ -4,6 +4,8 @@
 
 The babies matching game is an interactive game that can be played by all ages alone or in a group and fun way to test memory skills. The game has three different difficulty levels.
 
+The concept of this interactive and didactic game is to test, challenge and improve the user memory skills. At start of the game all cards will be presented in the game area with back face turned up, hen the user will click on 2 cards of his choice, one after the other, to flip and reveal the front face, iif the front faces are matching, both cards will be kept revealed if not the cards will be hidden again, so on until all the cards are revealed or the game time is over.
+
 This game was inspired by a game that I used to play when I was a kid and the theme is in honor of my baby daughter.
 
 [View the live project here.](https://andrefarinha86.github.io/Babies-match-game/)
@@ -15,7 +17,7 @@ This game was inspired by a game that I used to play when I was a kid and the th
 
 ## User Experience (UX)
 
-This project is designed for all users who like to have fun, play interactive games, test and exercise their memory skills. The game was thought and designed for 3 different difficulty levels, where the allowed playing time is reduced and the number of cards increases as the game level gets more difficult.
+This project is designed for all users who like to have fun, play interactive games, test and exercise his memory skills. The game was thought and designed for 3 different difficulty levels, where the allowed playing time is reduced and the number of cards increases as the game level gets more difficult.
 
 ### Goals
 
@@ -36,6 +38,21 @@ This project is designed for all users who like to have fun, play interactive ga
 
 ### Design
 
+- The background was designed with neutral colors to avoid distractions and focus on the main content.
+
+- Buttons were designed with hover style by changing the button backgroung and font color when user is over them.
+
+- Modals were designed with whole background behind in dark color to allows the user to focus in Modal content.
+
+- The title of the game has 2 Font Awesome baby icons at the beginning and end to emphasize the theme of the game.
+
+- The predominant color of the website is pink due to the main theme of the game - Baby Girl
+
+- Typography
+
+    - For game title the 'Yellowtail' font was chosen with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly.
+    - For all buttons the 'Heebo' font was chosen  with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly.
+    - For text in general in whole website the 'montserrat' font was chosen with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly
 
 
  ---
@@ -72,9 +89,96 @@ The Wireframe [balsamiq](https://balsamiq.com/) was used initially to draft and 
 
 ## Features
 
-- 
+- The Babies Matching Game website project was designed to responsive respond to different screen sizes down to 280px wide .
 
+1. **Header**
 
+- Featured at the top of the page, the header shows the game name: Babies Matching Game in a different font and 2 icons included at beginning and the end.
+- This header clearly tells the user what his is playing. 
+
+![Game title](assets/images/read-me-features1.png)
+
+2. **Home Page**
+
+- The website has 2 pages, the home page that will launched once the website is loaded and the Game arae page that initial is hidden and will be launched once the user has choiced the desired level.
+
+- The home page has a baby image to provide to the user an idea of website theme and 2 buttons (Play and Rules) that will pop up a modal with different information when the user click on it.
+
+![Home page](assets/images/read-me-features2.png)
+
+3. **Game Rules Modal**
+
+- When the user clicks on the Rules button, a Modal will appear showing the rules of the game.
+
+- The user can leave the modal and return to home page by clicking in the cross "X" button or simply by clicking outside of the modal area.
+
+![Rules Modal](assets/images/read-me-features3.png)
+
+4. **Game Level choice Model**
+
+- When the user clicks on the Play button, a Modal will appear showing 3 different buttons for each game level.
+
+- Here the user can choose the desired game level, and when clicking on one of the buttons the game page will be launched with the selected game level.
+
+- The user also can leave the modal and return to home page by clicking in the cross "X" button or simply by clicking outside of the modal area.
+
+![Game Level Modal](assets/images/read-me-features4.png)
+
+5. **Navigation Menu**
+
+- In the game page has at top, right below the game title, 2 buttons (reset and quit)
+
+- When clicking on the reset button, the user will restart the game returning to the default parameters, that is, all the revealed cards will be hidden again, the moves will be zeroed and the time will return to the initial time.
+
+- By clicking on the quit button, the user returns to the home page, where he can check or review the game rules or choose another game level.
+
+![Navigation Menu](assets/images/read-me-features5.png)
+
+6. **Game Display**
+
+- Betewen the navigation menu and the game board is located the game displey, where the user will be informed of the accumulated moves by turning over each card and the initial or remaining game time to end the game.
+
+![Game Display](assets/images/read-me-features6.png)
+
+7. **Beginner Game board**
+
+- When the user clicks and chooses the Beginner game level, a game page will open with 8 different cards pairs hidden and an allowed game time of 3 minutes.
+
+- The user will be able to play by turning over one pair of cards at a time to see if the pair matches or not until all cars are revealed or game time is over.
+
+![Beginner Game board](assets/images/read-me-features7.png)
+
+8. **Intermediate Game board**
+
+- When the user clicks and chooses the Beginner game level, a game page will open with 10 different cards pairs hidden and an allowed game time of 2 minutes.
+
+- The user will be able to play by turning over one pair of cards at a time to see if the pair matches or not until all cars are revealed or game time is over.
+
+![Intermediate Game board](assets/images/read-me-features8.png)
+
+9. **Advanced Game board**
+
+- When the user clicks and chooses the Beginner game level, a game page will open with 12 different cards pairs hidden and an allowed game time of 1 minutes.
+
+- The user will be able to play by turning over one pair of cards at a time to see if the pair matches or not until all cars are revealed or game time is over.
+
+![Advanced Game board](assets/images/read-me-features9.png)
+
+10. **Game over Modal**
+
+- When the allowed playing time for each level is up before all the cards are revealed a modal will pop up informing the user that the the time has ran out and the game is over.
+
+- The Game over Modal has Quit button that allows user to return to home page.
+
+![Game over Modal](assets/images/read-me-features10.png)
+
+11. **Win Modal**
+
+- When all the cards of each level are revealed before the time runs out, a modal will pop up congratulating the user and informing that the game is won.
+
+- The Win Modal has Quit button that allows user to return to home page.
+
+![Win Modal](assets/images/card11.jpg)
 
 ---
 
