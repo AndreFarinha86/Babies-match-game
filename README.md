@@ -12,22 +12,61 @@ This game was inspired by a game that I used to play when I was a kid and the th
 
 ---
 
+
 ## User Experience (UX)
+
+This project is designed for all users who like to have fun, play interactive games, test and exercise their memory skills. The game was thought and designed for 3 different difficulty levels, where the allowed playing time is reduced and the number of cards increases as the game level gets more difficult.
 
 ### Goals
 
-*****
+#### *First Time users*
+
+- As a first-time, the aim is for the user to easily navigate around the website intuitively, to have access to the tutorial information if needed,  and be able to easily understand the game rules.
+- As a first-time, the aim is for the user to easily access the game area, to be able to choose the game's difficulty level before starting to play and to have an understanding of what will change at each difficulty level.
+- As a first-time, the aim is for the user to have fun, test, challenge and improve the memory skills and gain a taste and interest in this type of didactic memory games.
+- As a first-time, the aim is for the user to be able to keep track of the amount of flips it has taken to complete the game and the time taken to do so as this can give a personal challenge to beat it on any further play-throughs.
+
+
+#### *Returning users*
+
+- As a returning, the aim is for the user to stay motivated and keep playing to complete and win each game level in the shortest time and moves (flipped cards) as possible, improving the memory skills.
 
 ---
 
+
 ### Design
 
-*****
+
 
  ---
 
 ### Wireframe
 
+The Wireframe [balsamiq](https://balsamiq.com/) was used initially to draft and develop the website design in a responsive way:
+
+1. Index - Game Home Page
+
+![Home page wireframe](assets/images/read-me-wireframe1.png)
+
+2. Game level selection menu
+
+![Our brands Page wireframe](assets/images/read-me-wireframe2.png)
+
+3. Game tutorial and rules pop up
+
+![Wine tours Page wireframe](assets/images/read-me-wireframe3.png)
+
+4. Game area for Beginner Level
+
+![Wine club Page wireframe](assets/images/read-me-wireframe4.png)
+
+5. Game area for Intermediate Level
+
+![Wine club Page wireframe](assets/images/read-me-wireframe5.png)
+
+6. Game area for Advanced Level
+
+![Wine club Page wireframe](assets/images/read-me-wireframe6.png)
 
 ---
 
@@ -45,9 +84,9 @@ In this project the following technologies have been used.
 
 ### Languages Used
 
--   [HTML5](https://en.wikipedia.org/wiki/HTML5)
--   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
--   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5) used for basic content and structure of the website.
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) used for style and design.
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript) used for logic structure of the game.
 
 ### Frameworks, Libraries & Programs Used
 
@@ -114,7 +153,7 @@ Along the development of the project regular testing were carried out. And the p
 
     ![Mobile lighthouse report](assets/images/read-me-lighthouse-report-mobile.png)
 
-    The performance is not great on mobiles due to the format of the images used on the site.
+    The performance is not great on mobiles due to the format of the images used on the website.
 
     - Lighthouse Desktop
 
